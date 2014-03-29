@@ -1,4 +1,9 @@
 ---
+  - name: Setup nginx repo
+    sudo: yes
+    template: src=nginx.repo.j2 dest=/etc/yum.repos.d/nginx.repo
+
+
   - name: Install nginx
     sudo: yes
     yum: name=nginx state=present
